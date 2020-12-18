@@ -11,6 +11,7 @@ class Game {
     this.categoryList = [];
   }
 
+  /* SsteUp the incial state of the game according to the java example provided. */
   setup(): void {
     const massa = new Category('massa');
     const lasanha = new Dish('lasanha');
@@ -24,6 +25,9 @@ class Game {
     this.categoryList.push(massa, bolo);
   }
 
+  getCategoryList = (): Category[] => this.categoryList;
+
+  /* Asking the user about a dish category. */
   askAboutDishCategory = (category: Category): boolean => {
     let answer = readline.question(`Você pensou em ${category.name}? (s/n) `);
     while (answer.trim() === '') {
@@ -32,6 +36,7 @@ class Game {
     return userAnswer(answer);
   };
 
+  /* Asking the user about a dish name. */
   askAboutDishName = (dish: Dish): boolean => {
     let answer = readline.question(`O prato que você pensou é ${dish.name} (s/n) `);
     while (answer.trim() === '') {
@@ -40,6 +45,7 @@ class Game {
     return userAnswer(answer);
   };
 
+  /* Asking the user about a dish trait. */
   askAboutDishTrait = (dish: Dish): boolean => {
     let answer = readline.question(`O prato que você pensou é/tem ${dish.trait} (s/n) `);
     while (answer.trim() === '') {
@@ -48,6 +54,7 @@ class Game {
     return userAnswer(answer);
   };
 
+  /* In case we don't guess the category, we ask the user about it. */
   askAboutNewCategory = (): void => {
     let answer = readline.question('A mano, você pensou no quê? ');
 
@@ -59,6 +66,7 @@ class Game {
     this.categoryList.push(newCategory);
   };
 
+  /* In case we don't guess the dish, we ask the user about it and it's trait. */
   askAboutNewDish = (dish: Dish, category: Category): number => {
     let answer = readline.question(`A mano, qual prato você pensou? `);
 
