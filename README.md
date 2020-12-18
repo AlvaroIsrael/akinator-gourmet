@@ -14,7 +14,7 @@ It suppose to behave similar to [akinator](https://pt.akinator.com/) and ask que
 I made a research there before starting the project and made use of some code to develop my own.
 
 <h1 align="center">
-    <img  alt="Akinator Console " src="https://github.com/AlvaroIsrael/akinator-gourmet/blob/main/src/images/magic-lamp-logo.png"/>
+    <img  alt="Akinator Console " src="https://github.com/AlvaroIsrael/akinator-gourmet/blob/main/src/images/akinator-gourmet-console.png"/>
 </h1>
 
 ## 🏆 Technologies used
