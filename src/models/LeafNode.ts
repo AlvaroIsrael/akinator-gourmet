@@ -13,7 +13,6 @@ class LeafNode extends RootNode {
   public askAbout(): void {
     const guessedCorrectly = userAnswer(readline.question(`O prato que você pensou é ${this.dish}? (s/n) `));
 
-    /* If the user answers yes we won de game. */
     if (guessedCorrectly) {
       logger.log(`Acertei de novo, você pensou em ${this.dish}!`);
     } else {
@@ -25,7 +24,7 @@ class LeafNode extends RootNode {
         newDish = readline.question('Nome do prato não pode estar vazio, digite novamente: ');
       }
 
-      let dishTrait = readline.question(`${newDish} é/tem _____________ mas ${this.dish} não: `);
+      let dishTrait = readline.question(`${newDish} é/tem ____________ mas ${this.dish} não: `);
 
       while (dishTrait.trim() === '') {
         dishTrait = readline.question('Característica não pode estar vazia, digite novamente: ');
@@ -41,15 +40,15 @@ class LeafNode extends RootNode {
       /* Othwewise we keep adding more nodes to the tree. */
       leafNode.setDish(newDish);
 
-      if (this.isYesNode()) {
-        this.getParentNode().setYes(newNode);
+      if (this.hasNextNode()) {
+        this.getParentNode().setRight(newNode);
       } else {
-        this.getParentNode().setNo(newNode);
+        this.getParentNode().setLeft(newNode);
       }
 
       newNode.setQuestion(question);
-      newNode.setYes(leafNode);
-      newNode.setNo(this);
+      newNode.setRight(leafNode);
+      newNode.setLeft(this);
     }
   }
 }

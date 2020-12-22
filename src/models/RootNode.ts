@@ -7,46 +7,46 @@ class RootNode {
 
   private parentNode: RootNode;
 
-  private yes: RootNode;
+  private rightNode: RootNode;
 
-  private no: RootNode;
+  private leftNode: RootNode;
 
-  private isYes: boolean;
+  private nextNode: boolean;
 
   public askAbout(): void {
     const answer = userAnswer(readline.question(this.question));
     if (answer) {
-      this.yes.askAbout();
+      this.rightNode.askAbout();
     } else {
-      this.no.askAbout();
+      this.leftNode.askAbout();
     }
   }
 
-  protected setParentNode(parentNode: RootNode, isYes: boolean): void {
+  protected setParentNode(parentNode: RootNode, nextNode: boolean): void {
     this.parentNode = parentNode;
-    this.isYes = isYes;
+    this.nextNode = nextNode;
   }
 
   protected getParentNode(): RootNode {
     return this.parentNode;
   }
 
-  protected isYesNode(): boolean {
-    return this.isYes;
+  protected hasNextNode(): boolean {
+    return this.nextNode;
   }
 
   public setQuestion(question: string): void {
     this.question = question;
   }
 
-  public setYes(yes: RootNode): void {
-    this.yes = yes;
-    yes.setParentNode(this, true);
+  public setRight(right: RootNode): void {
+    this.rightNode = right;
+    right.setParentNode(this, true);
   }
 
-  public setNo(no: RootNode): void {
-    this.no = no;
-    no.setParentNode(this, false);
+  public setLeft(left: RootNode): void {
+    this.leftNode = left;
+    left.setParentNode(this, false);
   }
 }
 

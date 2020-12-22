@@ -4,7 +4,7 @@ import LeafNode from '../models/LeafNode';
 class Game {
   private rootNode: RootNode;
 
-  /* Initial setup for the game. Here we just add to nodes to the tree and set the states of one of them as 'yes'. */
+  /* Initial setup for the game. */
   setup(): void {
     const yesLeafNode = new LeafNode();
     yesLeafNode.setDish('Lasanha');
@@ -13,8 +13,8 @@ class Game {
 
     this.rootNode = new RootNode();
     this.rootNode.setQuestion('O prato que você pensou é massa? (s/n) ');
-    this.rootNode.setYes(yesLeafNode);
-    this.rootNode.setNo(noLeafNode);
+    this.rootNode.setRight(yesLeafNode);
+    this.rootNode.setLeft(noLeafNode);
   }
 
   /* Entrance point for the game. */
