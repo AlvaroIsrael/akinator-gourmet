@@ -4,6 +4,8 @@
     🧞‍♂️ Akinator Gourmet
 </h1>
 
+Made with ❤️ by Alvaro Israel 👏🏻 [Get in touch!](https://www.linkedin.com/in/alvaroisraeldesenvolvedor/)
+
 ## 🗃 What is it?
 
 This is just a console game to show node.js skills. It was part of a code challenge given to me by Objective enterprise.
@@ -28,21 +30,16 @@ my own.
 
 This project uses NodeJs with Typescript, so in order for it to work, frist navigate inside the project's folder and run
 npm install to download the proper dependencies. I personally prefer to use yarn as a package manager, but all commands
-will work with either yarn or npm.
+will work with either yarn or npm. In case you choose npm, just go for 'npm run ' + command instead of 'yarn' + command.
 
-```
+```bash
 cd akinator-gourmet
-npm install
-or
 yarn install
 ```
 
-After that we can run the game by running the following command:
+After that we can start the game by running the following commands:
 
-```
-npm build
-npm start
-or
+```bash
 yarn build
 yarn start
 ```
@@ -51,14 +48,10 @@ yarn start
 
 This project uses JestJs as a test library. To run unity tests execute the following commands inside the project folder:
 
-```
-npm test
-or
+```bash
 yarn test
 ```
 
 ## 📝 Licence
 
 This is under MIT license. See [LICENSE](LICENSE.md) for more details.
-
-Made with ❤️ by Alvaro Israel 👏🏻 [Get in touch!](https://www.linkedin.com/in/alvaroisraeldesenvolvedor/)
